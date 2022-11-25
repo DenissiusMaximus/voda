@@ -1,0 +1,92 @@
+<ItemLabel@Label>:
+    font_size:'25sp'
+    halign: 'right'
+    valign: 'middle'
+    text_size:self.size
+
+
+<MainWidget>:
+
+    txsix: txsix
+    txsev: txsev
+    txsesi: txsesi
+    tripl: tripl
+    res: res
+    input: input
+
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    Label:
+        id:res
+        text:'0 грн'
+        size_hint:1, 0.3
+        font_size:'45sp'
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        size_hint:1, 0.3
+        TextInput:
+            id:input
+            multiline: False
+            text:''
+            font_size:'60sp'
+            input_type:'number'
+            input_filter:'int'
+
+
+        Button:   
+            background_color:'FFFF33'
+            text:'Считать'
+            size_hint:1, 0.6
+            on_release:
+                root.calc()
+
+    BoxLayout:
+        size_hint:1, 0.4
+        orientation: 'vertical'
+        BoxLayout:
+            padding: 5
+            spacing: 5
+            Button:
+                on_release:
+                    root.repl12()
+                id:txsix
+                text:'2 бутылки \nпо 6 л'
+                background_color:'99FF33'
+                font_size:'25sp'
+                valign: 'middle'
+                halign: 'center'
+            Button:
+                on_release:
+                    root.repl14()
+                id:txsev
+                text:'2 бутылки \nпо 7 л'
+                background_color:'99FF33'
+                font_size:'25sp'
+                valign: 'middle'
+                halign: 'center'
+        BoxLayout:
+            padding: 5
+            spacing: 5
+            Button:
+                on_release:
+                    root.repl13()
+                id:txsesi
+                text:'2 бутылки \nпо 6 и 7 л'
+                background_color:'99FF33'
+                font_size:'25sp'
+                halign: 'center'
+                valign: 'middle'
+            Button:
+                on_release:
+                    root.repl19()
+                id:tripl
+                text:'3 бутылки \nпо 6, 6 и 7 л'
+                background_color:'99FF33'
+                font_size:'25sp'
+                valign: 'middle'
+                halign: 'center'
